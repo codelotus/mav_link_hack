@@ -1,7 +1,10 @@
 # mavlink-hacking
 Project to hack on the mavlink protocol.
 
+
 ## Get Services Running...
+
+Assumes the project is running in a the VSCode dev container specified in the .devcontainer folder.
 
 ```bash
 # Allow X Connections
