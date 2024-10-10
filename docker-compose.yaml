@@ -1,0 +1,21 @@
+name: mavlinkhack
+services:
+  mavlinkhack:
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities:
+                - gpu
+    platform: linux/amd64
+    container_name: px4_mavlink_hacking
+    stdin_open: true
+    tty: true
+    environment:
+      - DISPLAY=:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    privileged: true
+    image: px4_ros2_zenoh_rust_devbox:v1.15.0

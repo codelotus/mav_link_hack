@@ -1,0 +1,30 @@
+{
+    "name": "MavLink Hacking",
+    "dockerComposeFile": "../docker-compose.yaml",
+    "service": "mavlinkhack",
+    "workspaceFolder": "/workspace",
+    "remoteUser": "app",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-vscode.cpptools",
+                "rust-lang.rust-analyzer",
+                "esbenp.prettier-vscode",
+                "eamodio.gitlens",
+                "vadimcn.vscode-lldb",
+                "bungcip.better-toml",
+                "mikestead.dotenv"
+            ],
+            "settings": {
+                "terminal.integrated.shell.linux": "/bin/bash",
+                "editor.formatOnSave": true,
+                "files.autoSave": "afterDelay",
+                "prettier.requireConfig": true
+            }
+        }
+    },
+    "postCreateCommand": "cargo build",
+    "mounts": [
+        "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached"
+    ]
+}
